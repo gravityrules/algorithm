@@ -8,3 +8,7 @@ Java based solution to commonly ocurring problems with test cases.
 
 Common sorting algorithms implemented in Java
 1. Bubble Sort
+2. Insertion Sort
+3. Merge Sort
+4. Quick Sort
+5. Selection Sort
