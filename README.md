@@ -14,4 +14,5 @@ B. Common sorting algorithms implemented in Java
 4. Quick Sort
 5. Selection Sort
 
-C. 
+C. Collections
+1. BST - BinarySearchTree - Naive attempt at common operations of a BST.
