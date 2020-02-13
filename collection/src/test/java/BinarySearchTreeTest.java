@@ -205,6 +205,11 @@ class BinarySearchTreeTest {
         assertEquals(Arrays.asList(3,5,10,20,25,30),bt.traverse());
     }
 
+    //          10
+    //      5        20
+    //3                    25
+    //                           30
+
     private void insert_Bt(BinarySearchTree bt){
         bt.insert(10);
         bt.insert(20);
@@ -212,6 +217,15 @@ class BinarySearchTreeTest {
         bt.insert(25);
         bt.insert(30);
         bt.insert(3);
+    }
+
+    @Test
+    public void test_Unbalanced_Tree_TraverseBFS(){
+        BinarySearchTree bt = new BinarySearchTree();
+        insert_Bt(bt);
+        assertEquals(Arrays.asList(10,5,20,3,25,30),bt.traverseBFS());
+        bt.delete(3);
+        assertEquals(Arrays.asList(10,5,20,25,30),bt.traverseBFS());
     }
 
 }

@@ -40,10 +40,28 @@ public class BinarySearchTree {
     }
 
     public List<Integer> traverse(){
-        return traverseTree(root, new ArrayList<Integer>());
+        return traverseTree(root, new ArrayList<>());
+    }
+
+    public List<Integer> traverseBFS(){
+        List<Integer> result = new ArrayList<>();
+        Queue<Node> queue = new Queue<>();
+        queue.enqueue(root);
+
+        Node currentNode;
+        while(queue.size() > 0){
+            currentNode = queue.dequeue().get();
+            result.add(currentNode.value);
+            if(currentNode.left !=null)
+                queue.enqueue(currentNode.left);
+            if(currentNode.right !=null)
+                queue.enqueue(currentNode.right);
+        }
+        return result;
     }
 
     private List<Integer> traverseTree(Node node, List<Integer> data) {
+        //DFS
         if(node == null)
             return data;
         traverseTree(node.left,data);
