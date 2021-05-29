@@ -17,6 +17,8 @@ B. Common sorting algorithms implemented in Java
 C. Collections
 1. BST - BinarySearchTree - Naive attempt at common operations of a BST.
 2. Queue - basic operations (enqueue, dequeue, peek) of an array backed ring buffer
+3. Single Linked List - First attempt at single linked list.
+3. Doubly Linked List - First attempt at double linked list.
 
 D. Search Algorithm
 1. Binary Search - First Attempt at Iterative Binary Search. 
