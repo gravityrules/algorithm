@@ -40,6 +40,7 @@ public class BinarySearchTree {
     }
 
     public List<Integer> traverse(){
+        //in order traversal - DFS
         return traverseTree(root, new ArrayList<>());
     }
 
@@ -50,7 +51,7 @@ public class BinarySearchTree {
 
         Node currentNode;
         while(queue.size() > 0){
-            currentNode = queue.dequeue().get();
+            currentNode = queue.dequeue().get();    //Already checked in if statement queue is not empty
             result.add(currentNode.value);
             if(currentNode.left !=null)
                 queue.enqueue(currentNode.left);
