@@ -43,4 +43,52 @@ class BinarySearchTest {
         assertEquals(-1,index);
     }
 
+    @Test
+    void test_searchNextLargest_key_present_at_end(){
+        List<Integer> list = Arrays.asList(1,4,7,9,10,15,20);
+        int index = BinarySearch.searchNextLargest(list,20);
+        assertEquals(-1,index);
+    }
+
+
+    @Test
+    void test_searchNextLargest_key_present_at_start(){
+        List<Integer> list = Arrays.asList(3,4,7,9,10,15,20);
+        int index = BinarySearch.searchNextLargest(list,3);
+        assertEquals(1,index);
+        assertEquals(4,list.get(index));
+    }
+
+    @Test
+    void test_searchNextLargest_key_missing_next_largest_exist(){
+        List<Integer> list = Arrays.asList(3,4,7,9,10,15,20);
+        int index = BinarySearch.searchNextLargest(list,1);
+        assertEquals(0,index);
+        assertEquals(3,list.get(index));
+    }
+
+    @Test
+    void test_searchNextLargest_key_missing_LHS_range_next_largest_exist(){
+        List<Integer> list = Arrays.asList(3,4,7,9,10,15,20);
+        int index = BinarySearch.searchNextLargest(list,6);
+        assertEquals(2,index);
+        assertEquals(7,list.get(index));
+    }
+
+
+    @Test
+    void test_searchNextLargest_key_missing_RHS_range_next_largest_exist(){
+        List<Integer> list = Arrays.asList(3,4,7,9,10,15,20);
+        int index = BinarySearch.searchNextLargest(list,16);
+        assertEquals(6,index);
+        assertEquals(20,list.get(index));
+    }
+
+    @Test
+    void test_searchNextLargest_key_missing_next_largest_doesnt_exist(){
+        List<Integer> list = Arrays.asList(3,4,7,9,10,15,20);
+        int index = BinarySearch.searchNextLargest(list,25);
+        assertEquals(-1,index);
+    }
+
 }
